@@ -8,7 +8,7 @@ card_number.reverse()
 
 processed_digits = []
 
-for index, digit in enumerate(card_number)
+for index, digit in enumerate(card_number):
 	if index % 2 == 0:
 		doubled_digit = int(digit) * 2
 
