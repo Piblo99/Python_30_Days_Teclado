@@ -1,9 +1,10 @@
 with open("iris.csv", "r") as iris_file:
 	iris_data = iris_file.readlines()
-print(iris_data)
 
 
 irises = []
+
+
 
 for row in iris_data[1:]:
 	sepal_length, sepal_width, petal_length, petal_width, species = row.strip().split(",")
@@ -17,3 +18,9 @@ for row in iris_data[1:]:
 	}
 
 	irises.append(iris_dict)
+
+
+
+with open("iris_2.csv", "w") as iris_file:
+	for iris in irises:
+		iris_file.write(",".join(iris.values()) + "\n")
