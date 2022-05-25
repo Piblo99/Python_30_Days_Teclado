@@ -1,11 +1,5 @@
 from charts import create_chart
-
-def handle_chart():
-    column = int(input(charting_menu))
-    create_chart(
-        [1, 2, 3, 4, 5],
-        [5.5, 6.4, 5.3, 4.4, 7.9]
-    )
+from data_storage import read_column
 
 user_menu = """Please choose from the following options:
 
@@ -18,6 +12,11 @@ charting_menu = "Enter the column you'd like to chart: "
 
 def handle_chart():
     column = int(input(charting_menu))
+    x = read_column(-1)
+    y = [float(n) for n in read_column(column)]
+
+    filename = input(filename_prompt)
+    create_chart(x, y, filename.strip())
 
 while True:
     user_selection = input(user_menu)
