@@ -2,7 +2,7 @@ def add_book():
     title = input("Title: ").strip().title()
     author = input("Author: ").strip().title()
     year = input("Year of publication: ").strip()
-
+#sneed
     with open("books.csv", "a") as reading_list:
         reading_list.write(f"{title},{author},{year},Not Read\n")
 
